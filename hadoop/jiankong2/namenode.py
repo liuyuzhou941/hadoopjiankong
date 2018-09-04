@@ -1,6 +1,8 @@
 import urllib.request
 import socket
 import json
+#import mailJJ
+import zmail
 
 
 
@@ -103,11 +105,16 @@ try:
         # jvm出现warn的次数
         #print(type(dict1["LogWarn"]))
         jvmB=dict1["LogWarn"]
+        print(jvmB)
         if jvmB>0:
             with open('mailContext.txt', 'w') as fw:  # with方式不需要再进行close
-                fw.write('jvm出现warn的次数>1')
+                fw.write('11111jvm出现warn的次数>1')
                 fw.close()
-                import mailJJ
+                print("wenjianguanbi")
+            import zmail1
+                #import mailJJ
+                #mailJJ.mail()
+
 
 
         else:
@@ -137,6 +144,7 @@ try:
 except Exception:
     print("'Server port 50700 not connect!")
 sk.close()
+print("socket guanbi")
 #with urllib.request.urlopen('http://192.168.200.73:50070/jmx') as response:
 
 

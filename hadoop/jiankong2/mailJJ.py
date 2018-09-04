@@ -7,7 +7,9 @@ from email.utils import formataddr
 
 my_sender = '1390331234@qq.com'  # 发件人邮箱账号
 my_pass = 'sqhmnpusuyoofjif'  # 发件人邮箱密码
-my_user = 'liuyuzhou@zhongruigroup.com'  # 收件人邮箱账号，我这边发送给自己
+#my_user = "'liuyuzhou@zhongruigroup.com','378512965@qq.com'"  # 收件人邮箱账号，我这边发送给自己
+my_user = 'liuyuzhou@zhongruigroup.com'
+print(my_user)
 
 
 def mail():
@@ -26,7 +28,7 @@ def mail():
     try:
         msg = MIMEText(line, 'plain', 'utf-8')
         msg['From'] = formataddr(["FromRunoob", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
-        msg['To'] = formataddr(["FK", my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+        msg['To'] = formataddr(["FK", my_user,])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject'] = "菜鸟教程发送邮件测试"  # 邮件的主题，也可以说是标题
 
         server = smtplib.SMTP_SSL("smtp.qq.com", 465)  # 发件人邮箱中的SMTP服务器，端口是25
